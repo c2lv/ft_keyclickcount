@@ -44,7 +44,7 @@ GetAsyncKeyState() 함수의 인자를 알기 쉽게 정리할 예정
 # 제작 함수
 ## ft_keyclickcount
 ### 프로토 타입과 설명
-`unsigned int	ft_keyclickcount(int second, int keybutton);`  
+`unsigned int	ft_keyclickcount(unsigned int second, int vkey);`  
 > 클릭한 횟수를 기록할 초 단위의 시간과  
 > 키보드의 키에 해당하는 16진수 값을 인자로 받아  
 > 해당 시간동안 해당 키를 클릭한 횟수를 반환합니다.
