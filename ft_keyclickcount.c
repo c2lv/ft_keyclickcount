@@ -12,29 +12,28 @@
 
 #include "libft.h"
 
-int	ft_keyclickcount(unsigned int second, int vkey)
+unsigned int	ft_keyclickcount(unsigned int second, int vkey)
 {
-	int		count;
-	int		minus;
-	time_t	t1;
-	time_t	t2;
+	unsigned int	count;
+	bool			keypress;
+	time_t			t1;
+	time_t			t2;
 
 	count = 0;
-	minus = 0;
+	keypress = false;
 	t1 = time(NULL);
-	while (1)
+	while (true)
 	{
 		t2 = time(NULL);
 		if (t1 + second <= t2)
 			break ;
-		if (minus == 1 && GetAsyncKeyState(vkey) < 0)
-			continue ;
-		else
-			minus = 0;
-		if (GetAsyncKeyState(vkey) == 1 || GetAsyncKeyState(vkey) < 0)
+		if ((!(GetAsyncKeyState(vkey) & 0x0001))
+		&& (GetAsyncKeyState(vkey) & 0x8000))
+			keypress = true;
+		if (keypress && (!(GetAsyncKeyState(vkey) & 0x0001))
+		&& (!(GetAsyncKeyState(vkey) & 0x8000)))
 		{
-			if (GetAsyncKeyState(vkey) < 0)
-				minus = 1;
+			keypress = false;
 			count++;
 		}
 	}

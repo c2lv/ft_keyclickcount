@@ -10,6 +10,8 @@ C 언어로
 그렇지 않은 키는 크기를 줄이거나 색상을 두드러지지 않게 하는 등  
 사용자에게 알맞은 키보드를 만드는 데 활용할 수 있을 것으로 기대함  
 # 프로젝트 특이사항 및 제작 환경
+이 프로젝트에서 클릭이란 키 버튼을 눌렀다 떼는 것임.
+
 `norminette -R CheckForbiddenSourceHeader`, `gcc -Wall -Wextra -Werror` 자가 테스트 통과  
 
 **OS**: Windows 10  
@@ -36,10 +38,13 @@ UI를 추가하여 실행, 종료가 버튼 이미지 마우스 클릭으로도 
 ## 어떻게 실행시킬 것인가
 Makefile을 작성할 예정  
 헤더 파일, 소스 파일 또한 정리할 예정  
+## vKey Constant/value, Description 알아보기 쉽게 html 파일 만들기
+104-Key.html 파일 수정해서 키보드 자판에 vKey 값을 표시하여  
+GetAsyncKeyState() 함수의 인자를 알기 쉽게 정리할 예정  
 # 제작 함수
-## ft_clickcount
+## ft_keyclickcount
 ### 프로토 타입과 설명
-`int	ft_clickcount(int second, int keybutton);`  
+`unsigned int	ft_keyclickcount(int second, int keybutton);`  
 > 클릭한 횟수를 기록할 초 단위의 시간과  
 > 키보드의 키에 해당하는 16진수 값을 인자로 받아  
 > 해당 시간동안 해당 키를 클릭한 횟수를 반환합니다.

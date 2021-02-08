@@ -14,9 +14,9 @@
 
 int	main(void)
 {
-	int lshift;
+	unsigned int	a;
 
-	lshift = 0;
-	lshift = ft_keyclickcount(5, VK_LSHIFT);
-	printf("%d", lshift);
+	a = ft_keyclickcount(5, VK_LBUTTON);
+	printf("%d", a);
+	return (0);
 }

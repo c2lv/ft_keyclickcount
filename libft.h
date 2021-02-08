@@ -16,7 +16,8 @@
 # include <stdio.h>
 # include <windows.h>
 # include <time.h>
+# include <stdbool.h>
 
-int	ft_keyclickcount(unsigned int second, int vkey);
+unsigned int	ft_keyclickcount(unsigned int second, int vkey);
 
 #endif
